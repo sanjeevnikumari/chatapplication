@@ -87,7 +87,7 @@ import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
 
-// ✅ Import your initialized app & server with socket.io
+// Import socket.io app & server
 import { app, server } from "./socket/socket.js";
 
 dotenv.config();
@@ -115,11 +115,9 @@ app.use("/api/v1/message", messageRoute);
 const frontendBuildPath = path.resolve(__dirname, "../frontend/build");
 app.use(express.static(frontendBuildPath));
 
-
-app.get(/.*/,(_,res)=>{
-  res.sendFile(path.resolve(__dirname,"frontend","dist","index.html"));
+app.get(/.*/, (_, res) => {
+  res.sendFile(path.join(frontendBuildPath, "index.html"));
 });
-
 
 // Start the shared HTTP + WebSocket server
 const PORT = process.env.PORT || 8000;
