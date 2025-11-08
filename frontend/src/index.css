@@ -14,3 +14,18 @@ body {
   background: url('../public/bg.avif') no-repeat center center;
   background-size: cover;
 }
+::-webkit-scrollbar {
+  /* Customize the scrollbar width */
+  width:6px;
+}
+
+::-webkit-scrollbar-track {
+  /* Customize the scrollbar track */
+  background-color: aliceblue;
+}
+
+::-webkit-scrollbar-thumb {
+  /* Customize the scrollbar thumb */
+  background: #1b1b1b;
+  border-radius: 10px;
+}
