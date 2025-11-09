@@ -102,7 +102,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 const corsOption = {
-  origin: "http://localhost:3000",
+  origin: "https://chatapplication-x3ju.onrender.com",
   credentials: true,
 };
 app.use(cors(corsOption));

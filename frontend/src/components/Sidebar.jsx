@@ -34,7 +34,7 @@ const Sidebar = () => {
         console.log("🔌 Socket disconnected from client side");
         dispatch(setSocket(null));
          }
-            const res = await axios.get(`http://localhost:8000/api/v1/user/logout`);
+            const res = await axios.get(`${API_BASE_URL}/api/v1/user/logout`);
             
             
             toast.success(res.data.message);
