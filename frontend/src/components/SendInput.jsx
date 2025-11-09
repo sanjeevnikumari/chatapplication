@@ -4,6 +4,7 @@ import { useState } from 'react';
 import axios from "axios";
 import {useDispatch,useSelector} from "react-redux";
 import { setMessages } from '../redux/messageSlice';
+import { MESS_API_BASE_URL } from '../utils/constant';
 
 
 
@@ -21,7 +22,7 @@ const SendInput = () => {
          const onSubmitHandler = async (e) => {
         e.preventDefault();
         try {
-             const res = await axios.post(`${API_BASE_URL}/api/v1/message/send/${selectedUser?._id}`, {message}, {
+             const res = await axios.post(`${MESS_API_BASE_URL}/send/${selectedUser?._id}`, {message}, {
                 headers:{
                     'Content-Type':'application/json'
                 },

@@ -11,6 +11,7 @@ import {useSelector, useDispatch} from "react-redux";
 import { setAuthUser, setOtherUsers, setSelectedUser, setOnlineUsers } from '../redux/userSlice';
 //import { setMessages } from '../redux/messageSlice';
 import { setSocket } from '../redux/socketSlice'; 
+import { USER_API_BASE_URL } from '../utils/constant';
 
 
 
@@ -34,7 +35,7 @@ const Sidebar = () => {
         console.log("🔌 Socket disconnected from client side");
         dispatch(setSocket(null));
          }
-            const res = await axios.get(`${API_BASE_URL}/api/v1/user/logout`);
+            const res = await axios.get(`${USER_API_BASE_URL}/logout`);
             
             
             toast.success(res.data.message);

@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from "axios";
 import toast from "react-hot-toast";
+import { USER_API_BASE_URL } from '../utils/constant';
   
 
 const Signup = () => {
@@ -21,7 +22,7 @@ const Signup = () => {
     e.preventDefault();
     console.log(user)
     try {
-      const res = await axios.post(`${API_BASE_URL}/api/v1/user/register`, user, {
+      const res = await axios.post(`${USER_API_BASE_URL}/register`, user, {
         headers: {
           'Content-Type': 'application/json'
         },

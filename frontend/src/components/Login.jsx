@@ -4,7 +4,7 @@ import { useState } from 'react';
 import toast from "react-hot-toast"
 import { useDispatch } from "react-redux";
 import { setAuthUser } from '../redux/userSlice';
-
+import { USER_API_BASE_URL } from '../utils/constant';
 
 import axios from "axios";
 
@@ -18,7 +18,7 @@ const Login = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
      try {
-      const res = await axios.post(`${API_BASE_URL}/api/v1/user/login`, user, {
+      const res = await axios.post(`${USER_API_BASE_URL}/login`, user, {
         headers: {
           'Content-Type': 'application/json'
         },
